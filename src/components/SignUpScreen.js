@@ -1,10 +1,12 @@
 import '../styles/signupscreen.css'
-import db, {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from '../firebase'
-import {useEffect, useRef} from "react";
+import {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from '../firebase'
+import {useRef} from "react";
+import {useNavigate} from "react-router-dom";
 
-const SignUpScreen = () => {
+const SignUpScreen = ({email}) => {
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
+    const navigate = useNavigate()
 
     const register = (e) => {
         e.preventDefault()
@@ -12,9 +14,7 @@ const SignUpScreen = () => {
         createUserWithEmailAndPassword(auth,
             emailRef.current.value,
             passwordRef.current.value)
-            .then(userCredential => {
-                console.log("User Created", userCredential)
-            })
+            .then(() => navigate('/'))
             .catch(err => alert(err.message))
     }
 
@@ -24,9 +24,7 @@ const SignUpScreen = () => {
         signInWithEmailAndPassword(auth,
             emailRef.current.value,
             passwordRef.current.value)
-            .then(userCredential => {
-                console.log("User Signed In", userCredential);
-            })
+            .then(() => navigate('/'))
             .catch(err => alert(err.message))
     }
 
@@ -34,7 +32,7 @@ const SignUpScreen = () => {
         <div className="signUpScreen">
             <form>
                 <h1>Sign In</h1>
-                <input ref={emailRef} type="email" placeholder="Email Address"/>
+                <input ref={emailRef} type="email" placeholder="Email Address" defaultValue={email}/>
                 <input ref={passwordRef} type="password" placeholder="Password"/>
                 <button type="submit" onClick={signIn}>Sign In</button>
 
