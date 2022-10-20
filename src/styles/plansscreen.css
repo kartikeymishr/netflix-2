@@ -1,0 +1,30 @@
+.plansScreen-date {
+    margin-top: 5px;
+    color: gray;
+}
+
+.plansScreen-plan {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.plansScreen-plan:hover {
+    opacity: 1;
+}
+
+.plansScreen-plan > button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #e50914;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.plansScreen-plan-disabled > button {
+    background-color: gray !important;
+    cursor: default;
+}
