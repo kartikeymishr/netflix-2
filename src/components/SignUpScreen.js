@@ -6,18 +6,6 @@ const SignUpScreen = () => {
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(userAuth => {
-            if (userAuth) {
-            } else {
-
-            }
-        })
-
-        return unsubscribe
-    }, [])
-
-
     const register = (e) => {
         e.preventDefault()
 
