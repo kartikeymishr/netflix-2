@@ -2,7 +2,7 @@
 
 ## A Netflix Clone utilizing TMDB
 
-### Version 1.0
+### Version 0.1.1
 
 <a href="https://netflix-clone-51f0f.web.app/">
   <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" />
