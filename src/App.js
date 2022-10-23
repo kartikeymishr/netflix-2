@@ -30,15 +30,15 @@ const App = () => {
 
 
     return (<div className="app">
-        <Router>
+        <Router basename="/netflix-2">
             {!user ?
                 <Routes>
-                    <Route path="/netflix-2/*" element={<LoginScreen/>}/>
+                    <Route path="/*" element={<LoginScreen/>}/>
                 </Routes>
                 :
                 <Routes>
-                    <Route path="/netflix-2/*" element={<HomeScreen/>}/>
-                    <Route path="/netflix-2/profile" element={<ProfileScreen/>}/>
+                    <Route path="/*" element={<HomeScreen/>}/>
+                    <Route path="profile" element={<ProfileScreen/>}/>
                 </Routes>
             }
         </Router>
