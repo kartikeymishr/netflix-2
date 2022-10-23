@@ -33,12 +33,12 @@ const App = () => {
         <Router>
             {!user ?
                 <Routes>
-                    <Route path="/*" element={<LoginScreen/>}/>
+                    <Route path="/netflix-2/*" element={<LoginScreen/>}/>
                 </Routes>
                 :
                 <Routes>
-                    <Route path="/*" element={<HomeScreen/>}/>
-                    <Route path="profile" element={<ProfileScreen/>}/>
+                    <Route path="/netflix-2/*" element={<HomeScreen/>}/>
+                    <Route path="/netflix-2/profile" element={<ProfileScreen/>}/>
                 </Routes>
             }
         </Router>
